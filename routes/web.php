@@ -25,10 +25,12 @@ $router->group(['middleware' => 'cors'], function () use ($router) {
     $router->options('/{any:.*}', function (Request $req) {
       return;
     });
-
+    
     // API route group
     $router->group(['prefix' => 'api'], function () use ($router) {
-  
+      $router->get('getAllContracts', 'ContractController@getAllContracts');
+      $router->get('getContractById/{id}', 'ContractController@getContractById');
+      $router->get('getContractByUserId/{id}', 'ContractController@getContractByUserId');
       
     });
 
