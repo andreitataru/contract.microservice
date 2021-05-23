@@ -28,6 +28,7 @@ $router->group(['middleware' => 'cors'], function () use ($router) {
     
     // API route group
     $router->group(['prefix' => 'api'], function () use ($router) {
+      $router->post('addContract', 'ContractController@addContract');
       $router->get('getAllContracts', 'ContractController@getAllContracts');
       $router->get('getContractById/{id}', 'ContractController@getContractById');
       $router->get('getContractByUserId/{id}', 'ContractController@getContractByUserId');
