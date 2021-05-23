@@ -87,7 +87,6 @@ class ContractController extends Controller
 
             return response()->json(['message' => 'Contract not found!'], 404);
         }
-
     }
 
 }
